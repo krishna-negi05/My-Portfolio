@@ -3,7 +3,7 @@
   <h1 align="center">Personal Website</h1>
   <h5 align="center">HTML5 + CSS3 + JavaScript</h5>
   <hr/>
-  <img src="https://raw.githubusercontent.com/LakshanRukantha/lakshanrukantha.github.io/master/img/website_preview.png" alt="webpage preview"/>
+  <img src="img/website_preview.png" alt="webpage preview"/>
   <hr/>
   
 <p align="center">
