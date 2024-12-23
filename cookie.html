@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Preferences - Portfolio</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Cookie Preferences Modal */
+        .cookie-preferences-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            padding: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            z-index: 10000;
+            border-radius: 15px;
+            width: 350px;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .cookie-preferences-modal h2 {
+            font-size: 1.8rem;
+            color: #1abc9c;
+            margin-bottom: 20px;
+        }
+
+        .cookie-preferences-modal p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .cookie-preferences-modal .btn {
+            background-color: #1abc9c;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .cookie-preferences-modal .btn:hover {
+            background-color: #16a085;
+            transform: translateY(-3px);
+        }
+
+        /* Align Checkboxes Vertically */
+        .cookie-preferences-modal .checkbox-container {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .cookie-preferences-modal input[type="checkbox"] {
+            margin-right: 10px;
+            margin-top: 10px;
+            accent-color: #1abc9c;
+        }
+
+        .cookie-preferences-modal label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .cookie-preferences-modal .btn-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .cookie-preferences-modal .btn-container button {
+            width: 45%;
+        }
+
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Overlay for dimming background -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Cookie Preferences Modal -->
+    <div id="cookie-preferences-modal" class="cookie-preferences-modal">
+        <h2>Cookie Preferences</h2>
+        <p>Your privacy matters to me. Please choose your cookie preferences:</p>
+        <div class="checkbox-container">
+            <label for="analytics-cookies">
+                <input type="checkbox" id="analytics-cookies"> Enable Analytics Cookies (Track site performance)
+            </label>
+            <label for="marketing-cookies">
+                <input type="checkbox" id="marketing-cookies"> Enable Marketing Cookies (Personalized ads)
+            </label>
+        </div>
+        <div class="btn-container">
+            <button id="save-preferences" class="btn">Save Preferences</button>
+            <button id="close-modal" class="btn">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Open the modal when the page loads
+        window.onload = function() {
+            // Check if the user has already accepted cookies
+            if (!localStorage.getItem('cookies-accepted')) {
+                document.getElementById('cookie-preferences-modal').style.display = 'block';
+                document.getElementById('overlay').style.display = 'block';
+            }
+        }
+
+        // Close the modal
+        document.getElementById('close-modal').addEventListener('click', function() {
+            document.getElementById('cookie-preferences-modal').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        });
+
+        // Save user preferences
+        document.getElementById('save-preferences').addEventListener('click', function() {
+            const analyticsEnabled = document.getElementById('analytics-cookies').checked;
+            const marketingEnabled = document.getElementById('marketing-cookies').checked;
+            
+            // Save preferences in localStorage
+            localStorage.setItem('analytics-cookies', analyticsEnabled);
+            localStorage.setItem('marketing-cookies', marketingEnabled);
+            localStorage.setItem('cookies-accepted', 'true');
+            
+            // Hide the modal and overlay
+            document.getElementById('cookie-preferences-modal').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+            
+            // Optional: Redirect to portfolio home page after saving preferences
+            window.location.href = 'index.html'; // Change 'index.html' to your portfolio's homepage URL
+        });
+    </script>
+</body>
+</html>

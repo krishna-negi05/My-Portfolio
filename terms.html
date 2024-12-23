@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions</title>
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* Apply gradient background */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: #222222;
+            color: #333;
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            overflow: hidden;
+        }
+              
+        
+
+        /* Center the content and style the outer container */
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: #222222; /* White background for the container */
+            border-radius: 15px;
+            
+           
+           /* Subtle border */
+        }
+
+        /* Styling the dark black box around the heading */
+        .heading-box {
+            background: #68d372;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: #86be8c 2px 2px 0.5;
+            box-shadow: 0 4px 8px rgba(0, 251, 113, 0.2) ;
+        }
+
+        /* Heading text style */
+        .heading-box h1 {
+            font-family: 'Bebas Neue', serif;
+            font-size: 2.4rem;
+            color: #ffffff; /* White text color */
+            margin: 0;
+            letter-spacing: 2.5px;
+            word-spacing: 6px;
+        }
+
+        /* Paragraph styling */
+        p {
+            margin: 15px 20px;
+            font-size: 1rem;
+            color: #ffffff; /* Dark gray color for paragraphs */
+        }
+
+        /* List styling */
+        ul {
+            margin: 15px 40px;
+            font-size: 1rem;
+            color: #ffffff; /* Dark gray color for list items */
+        }
+
+        li {
+            margin: 10px 0;
+        }
+        
+        
+        .close-btn {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 5px 15px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            color: #ffffff;
+            background-color: #68d372;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .close-btn:hover{
+            cursor: pointer;
+        }
+
+        .close-btn:active {
+            transform: scale(0.9); /* Shrinks the button slightly */
+        }
+
+        .close-btn-container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Dark black box for the heading -->
+        <div class="heading-box">
+            <h1>Terms and Conditions</h1>
+        </div>
+        <p>
+            &nbsp;
+        </p>
+        <p>Welcome to my portfolio! By accessing or using this site, you agree to the following terms and conditions:</p>
+        <ul>
+            <li>Your use of this site must comply with all applicable laws.</li>
+            <li>The content on this site is for informational purposes only.</li>
+            <li>Unauthorized duplication or distribution is prohibited.</li>
+            <li>We reserve the right to update these terms at any time.</li>
+        </ul>
+        <p>If you have any questions, feel free to contact us.</p>
+        <div class="close-btn-container">
+            <!-- Close button -->
+            <button class="close-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+    <script>
+        function closeModal() {
+            // Inform the parent page to close the modal
+            if (window.parent) {
+                window.parent.postMessage({ action: 'closeModal' }, '*');
+            }
+        }
+    </script>
+</body>
+</html>
