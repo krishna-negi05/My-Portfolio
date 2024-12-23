@@ -19,9 +19,11 @@ _Call-to-Action buttons_
 
 _Repo info_
 
-![GitHub top language](https://img.shields.io/github/languages/top/lakshanrukantha/lakshanrukantha.github.io)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/lakshanrukantha/lakshanrukantha.github.io)
-![GitHub last commit](https://img.shields.io/github/last-commit/lakshanrukantha/lakshanrukantha.github.io)
+## Languages Used
+![JavaScript](https://img.shields.io/badge/JavaScript-38.1%25-yellow)
+![HTML](https://img.shields.io/badge/HTML-31.8%25-orange)
+![CSS](https://img.shields.io/badge/CSS-30.1%25-purple)
+
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license)
 
 ## Documentation
