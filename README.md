@@ -13,7 +13,7 @@ _Call-to-Action buttons_
 
 <div align="center">
 
-[![View site - GH Pages](https://img.shields.io/badge/View_site-GH_Pages-2ea44f?style=for-the-badge)](https://krishna-hazel.vercel.app/)
+[![View site - GH Pages](https://img.shields.io/badge/View_site-GH_Pages-2ea44f?style=for-the-badge)](https://krish05-portfolio.vercel.app/)
 <hr/>
 </div>
 
