@@ -30,4 +30,4 @@ jobs:
 
       # Step 4: Deploy to Vercel
       - name: Deploy to Vercel
-        run: npx vercel --prod --token 8vQPJCeiOjCYbzTlWn8AfDhj
+        run: npx vercel --prod 8vQPJCeiOjCYbzTlWn8AfDhj
